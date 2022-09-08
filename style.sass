@@ -1,0 +1,88 @@
+@import "sass/company-colors"
+@import "sass/fonts"
+
+
+
+body
+    background-color: #F5B1C2
+    font-family: 'FredokaOne'
+
+header
+    @extend .center-all
+    justify-content: space-between !important
+    padding: 0px 64px
+
+    nav
+        display: flex
+        align-items: center
+
+a
+    color: white
+    text-decoration: none
+    margin-left: 32px
+    &:hover
+        color: $main-color
+
+h1
+    color: $main-color
+    font-family: 'Pacifico'
+    text-align: center
+    
+.row 
+    display: flex
+    gap: 16px
+
+.button
+    background-color: white
+    border: unset
+    height: 48px
+    padding: 0px 16px
+    min-width: 150px
+    border-radius: 32px
+    font-family: inherit
+    cursor: pointer
+    @extend .center-all
+    &:hover 
+        filter: brightness(1.2)
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.2)
+
+.center-all 
+    display: flex
+    justify-content: center
+    align-items: center
+
+
+.button-main 
+    @extend .button
+    background-color: $main-color
+    color: white !important
+
+.main-text
+    color: white
+    position: absolute
+    top: 20vh
+    left: 64px
+    font-size: 40px
+    text-transform: uppercase
+
+.main-color
+    color: $main-color
+
+@mixin rightCorner()
+    position: absolute
+    bottom: 0
+    right: 20vw
+
+@mixin circle($size, $bgColor:#F59EB4)
+    width: $size
+    height: $size
+    background-color: $bgColor
+    border-radius: 50%
+
+.gbi
+    width: 40vw
+    @include rightCorner()
+
+.circle
+    @include rightCorner()
+    @include circle(40vw)
